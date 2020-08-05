@@ -53,13 +53,13 @@ public class Joshua_Routledge_Week7Assignment {
 			teamSpacing = 4 + String.valueOf(teams).length();
 		}
 		
+		// Creates a variable length dashes line to always be 3 dashes longer then the average while being a minimum of the length above
 		String dashLine = generateDashLine(games);
 		
 		System.out.println(dashLine);
 		System.out.println("Football Scores Report");
 		System.out.println(dashLine);
-		 // change Team to Scores spacing dynamically
-		 // change Score to Tot spacing dynamically if games < 3 min spacing = 8 else 3 spaces per game
+		//Calculates the amount of spacing needed between Scores and Tot and between Tot and Avg
 		int scoresSpacing = totalLength(9,(3*(games) + 3));
 		int totalSpacing = totalLength(6,(String.valueOf(highestTotal).length() + 3));
 		System.out.println("Team   Scores" + spacesNeeded(scoresSpacing,6) + "Tot" + spacesNeeded(totalSpacing,3) + "Avg");
@@ -90,6 +90,7 @@ public class Joshua_Routledge_Week7Assignment {
 		input.close();
 	}
 	
+	// Both spacesNeeded methods are used to calculate the spaces needed and return a string of that many spaces
 	public static String spacesNeeded(int totalLength, int staticRemovedLength, int numberRemoved) {
 		int spacesNeeded = totalLength-staticRemovedLength-String.valueOf(numberRemoved).length();
 		String spaces = String.format("%" + spacesNeeded + "s", "");
